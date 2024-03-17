@@ -38,10 +38,9 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             	$_SESSION['user_name'] = $row['user_name'];
             	$_SESSION['name'] = $row['name'];
             	$_SESSION['email'] = $row['email'];
-				$_SESSION['level'] = $row['level'];
 
 				// Kiểm tra xem user có phải là admin không
-				if($row['level'] == 1)
+				if($row['user_name'] == 'admin')
 					header("Location: dashboard.php");
 				else
             		header("Location: home.php");
